@@ -183,9 +183,12 @@ img {
 
 .overlay {
 	background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/office-bg.jpg);
-	background-size: 1440px;
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	max-width: 1440px;
+	height: 600px;
+	margin: 0 auto;
 }
 
 .hero-title {
@@ -246,7 +249,7 @@ img {
 }
 
 .filter-button:hover,
-.filter-button:active {
+.filter-button:focus {
 	color: var(--white-color);
 	background-color: var(--pressed-state);
 	border: 1px solid transparent;
@@ -268,8 +271,8 @@ img {
 
 .strenghths.list .item-icon {
 	display: flex;
-	content: "";
-	width: 264px;
+	align-items: center;
+	justify-content: center;
 	height: 112px;
 	margin-bottom: 8px;
 	border-radius: 4px;
@@ -278,8 +281,6 @@ img {
 }
 
 .strenghths-icon {
-	display: block;
-	margin: auto;
 	width: 64px;
 	height: 64px;
 }
@@ -368,13 +369,15 @@ img {
 }
 
 .link-icon {
-	margin: 12px 12px;
 }
 
 .social-link {
-	display: block;
+	display: flex;
 	background-color: var(--brand-color);
 	border-radius: 50%;
+
+	align-items: center;
+	justify-content: center;
 
 	height: 40px;
 	width: 40px;
@@ -412,29 +415,25 @@ img {
 }
 
 .customers-icon {
-	display: block;
-	margin: auto;
-	align-items: center;
-	fill: var(--subtle-text-color);
+	fill: currentColor;
 }
 
 .customers-link {
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 168px;
 	height: 88px;
 
-	border: 1px solid var(--subtle-text-color);
+	color: var(--subtle-text-color);
+
+	border: 1px solid currentColor;
 	border-radius: 4px;
 }
 
 .customers-link:hover,
 .customers-link:focus {
-	border: 1px solid var(--pressed-state);
-}
-
-.customers-icon:hover,
-.customers-icon:focus {
-	fill: var(--pressed-state);
+	color: var(--pressed-state);
 }
 /* Filters */
 
@@ -458,7 +457,12 @@ img {
 	margin-bottom: 48px;
 }
 
-.portfolio-photo:hover {
+.portfolio-link {
+	text-decoration: none;
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus {
 	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
@@ -480,6 +484,10 @@ img {
 }
 
 .portfolio-img {
+}
+
+.portfolio-link {
+	display: block;
 }
 
 /* Footer */
@@ -553,6 +561,8 @@ img {
 
 .footer-social-link {
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
@@ -562,9 +572,4 @@ img {
 .footer-social-link:hover,
 .footer-social-link:focus {
 	background-color: var(--success-color);
-}
-
-.footer-link-icon {
-	display: block;
-	margin: auto;
 }
